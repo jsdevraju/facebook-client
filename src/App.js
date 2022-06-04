@@ -55,7 +55,7 @@ function App() {
   };
 
   return (
-    <div className={darkTheme && "dark"}>
+    <div className={`${darkTheme && "dark"}`}>
       {visible && (
         <CreatePostPopup
           user={user}
