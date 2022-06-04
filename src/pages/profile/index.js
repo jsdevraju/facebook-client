@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useReducer, useRef, useState } from "react";
 import { useSelector } from "react-redux";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { profileReducer } from "../../functions/reducers";
 import Header from "../../components/header";
 import "./style.css";
@@ -28,7 +28,7 @@ export default function Profile({ getAllPosts }) {
   const [photos, setPhotos] = useState({});
   var userName = username === undefined ? user.username : username;
 
-  const [{ loading, error, profile }, dispatch] = useReducer(profileReducer, {
+  const [{ loading, profile }, dispatch] = useReducer(profileReducer, {
     loading: false,
     profile: {},
     error: "",
